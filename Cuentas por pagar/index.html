@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+    <table id="proveedores">
+        <thead>
+            <tr>
+                <th>Proveedor ID</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se cargarán los proveedores -->
+        </tbody>
+    </table>
+
+    <script>
+        async function cargarProveedores() {
+            const response = await fetch('http://localhost:3000/api/proveedores');
+            const proveedores = await response.json();
+
+            const tbody = document.querySelector('#proveedores tbody');
+            proveedores.forEach(proveedor => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${proveedor.ProveedorID}</td>
+                    <td>${proveedor.NombreProveedor}</td>
+                    <td>${proveedor.Dirección}</td>
+                    <td>${proveedor.Teléfono}</td>
+                    <td>${proveedor.Email}</td>
+                `;
+                tbody.appendChild(fila);
+            });
+        }
+
+        cargarProveedores();
+    </script>
+</body>
+</html>
