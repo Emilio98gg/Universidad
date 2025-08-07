@@ -1,0 +1,56 @@
+/* Estilos para la tabla */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff; /* Cambio de color del texto a blanco */
+    border: 2px solid #f44336; /* Añadir borde a la tabla */
+    border-collapse: collapse; /* Colapso de bordes para que no se superpongan */
+    border-radius: 8px; /* Añadir bordes redondeados */
+}
+
+.table th,
+.table td {
+    padding: 1rem; /* Aumento del padding para mayor espacio */
+    vertical-align: middle; /* Alineación vertical centrada */
+    border: 2px solid #f44336; /* Añadir borde a las celdas */
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 4px solid #fff; /* Cambio de grosor y color del borde inferior a blanco */
+    background-color: #d32f2f; /* Cambio de color de fondo del encabezado a rojo oscuro */
+}
+
+.table tbody + tbody {
+    border-top: 4px solid #fff; /* Cambio de grosor y color del borde superior a blanco */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.1); /* Cambio de color de fila a blanco con opacidad */
+}
+
+.table-hover tbody tr:hover {
+    color: #fff; /* Cambio de color del texto a blanco */
+    background-color: #b71c1c; /* Cambio de color de fondo a rojo más oscuro al hacer hover */
+}
+
+/* Estilos para los encabezados de la tabla */
+.table-dark {
+    color: inherit;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+    border-color: #fff; /* Cambio de color del borde a blanco */
+    background-color: #b71c1c; /* Cambio de color de fondo a rojo oscuro */
+}
+
+.table-dark.table-bordered {
+    border: 0;
+}
+
+.bold-underline {
+    font-weight: bold;
+    text-decoration: underline;
+}

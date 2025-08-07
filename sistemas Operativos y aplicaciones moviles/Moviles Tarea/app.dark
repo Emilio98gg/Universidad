@@ -1,0 +1,116 @@
+fn inicio() {
+  respond(
+    html("Página de Inicio")
+    ++ html("<p>Introducción a la plataforma.</p>")
+    ++ html("<p>Breve descripción de los servicios ofrecidos.</p>")
+    ++ html("<p><a href='/login'>Iniciar sesión</a> o <a href='/registro'>registrarse</a>.</p>")
+  )
+}
+
+fn registro() {
+  respond(
+    html("Registro / Inicio de Sesión")
+    ++ html("<p>Formulario de registro para nuevos usuarios.</p>")
+    ++ html("<p>Opción para iniciar sesión con cuenta existente.</p>")
+    ++ html("<p>Enlaces para recuperar contraseña o ayuda.</p>")
+  )
+}
+
+fn panelUsuario() {
+  respond(
+    html("Panel de Usuario")
+    ++ html("<p>Vista general de la agenda del usuario.</p>")
+    ++ html("<p>Opción para ver citas programadas.</p>")
+    ++ html("<p>Botón para programar una nueva cita.</p>")
+  )
+}
+
+fn programacionCitas() {
+  respond(
+    html("Programación de Citas")
+    ++ html("<p>Calendario interactivo para seleccionar fecha y hora.</p>")
+    ++ html("<p>Lista de profesionales disponibles en la fecha seleccionada.</p>")
+    ++ html("<p>Formulario para especificar motivo de la cita y detalles adicionales.</p>")
+  )
+}
+
+fn confirmacionCita() {
+  respond(
+    html("Confirmación de Cita")
+    ++ html("<p>Resumen de la cita programada.</p>")
+    ++ html("<p>Opción para confirmar o cancelar la cita.</p>")
+    ++ html("<p>Mensaje de confirmación y detalles adicionales (ubicación, instrucciones, etc.).</p>")
+  )
+}
+
+fn gestionAgenda() {
+  respond(
+    html("Gestión de Agenda")
+    ++ html("<p>Vista detallada de la agenda del usuario.</p>")
+    ++ html("<p>Opción para editar o cancelar citas existentes.</p>")
+    ++ html("<p>Herramientas de filtrado y búsqueda para encontrar citas específicas.</p>")
+  )
+}
+
+fn configuracionPerfil() {
+  respond(
+    html("Configuración de Perfil")
+    ++ html("<p>Formulario para editar información de perfil (nombre, correo electrónico, contraseña, etc.).</p>")
+    ++ html("<p>Opción para añadir preferencias de notificación y recordatorio.</p>")
+  )
+}
+
+fn documentosAcademicos() {
+  respond(
+    html("Documentos para uso académico")
+    ++ html("<p>Opción para añadir preferencias de notificación y recordatorio.</p>")
+  )
+}
+
+fn notificacionesRecordatorios() {
+  respond(
+    html("Notificaciones y Recordatorios")
+    ++ html("<p>Página para gestionar notificaciones y recordatorios.</p>")
+    ++ html("<p>Configuración de preferencias de notificación (correo electrónico, mensajes de texto, notificaciones push, etc.).</p>")
+  )
+}
+
+fn cierreSesion() {
+  respond(
+    html("Cierre de Sesión")
+    ++ html("<p>Confirmación de cierre de sesión y despedida al usuario.</p>")
+  )
+}
+
+fn main() {
+  route("/")
+    .get(inicio)
+
+  route("/registro")
+    .get(registro)
+
+  route("/panel-usuario")
+    .get(panelUsuario)
+
+  route("/programacion-citas")
+    .get(programacionCitas)
+
+  route("/confirmacion-cita")
+    .get(confirmacionCita)
+
+  route("/gestion-agenda")
+    .get(gestionAgenda)
+
+  route("/configuracion-perfil")
+    .get(configuracionPerfil)
+
+  route("/documentos-academicos")
+    .get(documentosAcademicos)
+
+  route("/notificaciones-recordatorios")
+    .get(notificacionesRecordatorios)
+
+  route("/cierre-sesion")
+    .get(cierreSesion)
+}
+
